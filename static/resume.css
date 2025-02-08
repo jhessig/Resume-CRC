@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    --bs-body-bg: #383B53;
+    --bs-body-color: #D4D6B9;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.cert {
+    text-align: center;
+}
+.cert img {
+    width: 125px;
+}
+.row {
+    padding-top: 10px;
+}
+.sidebar {
+
+}
+
+.intro {
+    text-align: center;
+}
+
+.experience {
+
+}
+
+.education {
+    text-align: center;
+}
+
+.other-links {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+footer {
+    margin-top: auto;
+}

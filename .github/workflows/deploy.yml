@@ -6,6 +6,7 @@ on:
 
 jobs:
   deploy:
+    name: "Deploy"
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
@@ -34,7 +35,8 @@ jobs:
               --auth-mode key \
               --account-key "$STORAGE_KEY" \
               --destination '$web' \
-              --source .
+              --source . \
+              --overwrite
 
       - name: "Purge CDN endpoint"
         uses: azure/cli@v2

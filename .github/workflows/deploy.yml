@@ -23,7 +23,7 @@ jobs:
       - name: "Replace API URL in javascript"
         run: |
           ENV_API_URL=$(az keyvault secret show \
-            --name "${{ steps.extract_branch.outputs.branch }}-api-url" \
+            --name "$prod-api-url" \
             --vault-name "${{ secrets.KEY_VAULT_NAME }}" --query value -o tsv)
           sed -i "s|{{API_URL}}|$ENV_API_URL|g" ./resume.js
 

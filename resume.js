@@ -1,5 +1,6 @@
+const API_URL = 'https://{{API_URL}}/api/visitor_count';
+
 async function updateVisitorCount() {
-    const API_URL = 'https://{{API_URL}}/api/visitor_count';
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
@@ -20,3 +21,5 @@ async function updateVisitorCount() {
         document.getElementById('count').textContent = 'Error loading count';
     }
 }
+
+document.addEventListener('DOMContentLoaded', updateVisitorCount);

@@ -5,7 +5,7 @@ function getPostSlug() {
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('post');
 
-    if (!slug || !/^[a-zA-Z0-9_-]+$/.test(slug)) {
+    if (!slug || !/^[a-zA-Z0-9_/-]+$/.test(slug) || slug.includes('..')) {
         return null;
     }
     return slug;
@@ -21,7 +21,7 @@ async function loadPost() {
     }
 
     try {
-        const response = await fetch(`posts/${slug}.md`);
+        const response = await fetch(`posts/${slug}/index.md`);
 
         if (!response.ok) {
             contentEl.innerHTML = '<h2>Post not found</h2><p>Return to the <a href="index.html">blog index</a>.</p>';
@@ -29,7 +29,19 @@ async function loadPost() {
         }
 
         const markdown = await response.text();
-        contentEl.innerHTML = marked.parse(markdown);
+
+        // Rewrite relative image paths to point into the post's folder
+        const renderer = new marked.Renderer();
+        renderer.image = function ({ href, title, text }) {
+            // Only rewrite relative paths (not absolute URLs)
+            if (href && !href.startsWith('http') && !href.startsWith('/')) {
+                href = `posts/${slug}/${href}`;
+            }
+            const titleAttr = title ? ` title="${title}"` : '';
+            return `<img src="${href}" alt="${text || ''}"${titleAttr} loading="lazy">`;
+        };
+
+        contentEl.innerHTML = marked.parse(markdown, { renderer });
 
         // Update page title from the first h1
         const firstH1 = contentEl.querySelector('h1');

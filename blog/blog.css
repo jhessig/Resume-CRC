@@ -205,6 +205,109 @@
     padding: 40px 0;
 }
 
+/* Archive Section */
+.blog-archive {
+    margin-top: 30px;
+}
+
+.archive-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    padding: 14px 20px;
+    font-size: 1.05rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.archive-toggle:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.archive-chevron {
+    transition: transform 0.3s ease;
+}
+
+.blog-archive.open .archive-chevron {
+    transform: rotate(180deg);
+}
+
+.archive-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.blog-archive.open .archive-content {
+    max-height: 2000px;
+}
+
+.archive-year {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.archive-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.archive-item:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.archive-item a {
+    color: var(--text-color);
+    transition: var(--transition);
+    flex: 1;
+    margin-right: 15px;
+}
+
+.archive-item a:hover {
+    color: #2980b9;
+}
+
+.archive-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .archive-item {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .archive-date {
+        font-size: 0.8rem;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .blog-post-content {

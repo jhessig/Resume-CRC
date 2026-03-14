@@ -1,10 +1,9 @@
 [
-
   {
-    "slug": "example",
-    "title": "Example Blog Post",
+    "slug": "2026/20260313-cloudresume",
+    "title": "Building My Cloud Resume: A Journey Through Azure, Terraform, and DevOps",
     "date": "2026-03-13",
-    "readTime": "1 min read",
-    "summary": "This is a blog post about something interesting."
+    "readTime": "15 min read",
+    "summary": "From localhost HTML to Azure-powered production beast: My 2-year Cloud Resume Challenge odyssey with Terraform, serverless APIs, and zero-downtime DevOps magic."
   }
 ]

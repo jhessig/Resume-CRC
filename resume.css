@@ -17,9 +17,46 @@ body {
     color: var(--text-color);
     font-family: 'Roboto', 'Segoe UI', sans-serif;
     line-height: 1.6;
-    padding: 20px 0;
+    padding: 0;
     min-height: 100vh;
     position: relative;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-family: 'Silkscreen', cursive;
+    font-size: 1.4rem;
+    color: var(--text-color) !important;
+}
+
+.navbar .nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--text-color) !important;
+}
+
+.navbar-social a {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    margin-left: 12px;
+    transition: var(--transition);
+}
+
+.navbar-social a:hover {
+    color: #2980b9;
+    transform: scale(1.2);
 }
 
 .container {

@@ -1,8 +1,8 @@
 [
   {
-    "slug": "2026/20260313-cloudresume",
+    "slug": "2026/20260328-cloudresume",
     "title": "Building My Cloud Resume: A Journey Through Azure, Terraform, and DevOps",
-    "date": "2026-03-13",
+    "date": "2026-03-28",
     "readTime": "15 min read",
     "summary": "From localhost HTML to Azure-powered production beast: My 2-year Cloud Resume Challenge odyssey with Terraform, serverless APIs, and zero-downtime DevOps magic."
   }
